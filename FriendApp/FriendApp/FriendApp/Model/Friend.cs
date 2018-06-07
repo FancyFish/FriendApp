@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,6 +8,7 @@ namespace FriendApp.ViewModel
     public class Friend : NotificableFriend
     {
         #region Atributos
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         private string nombre;
         private string telefono;
