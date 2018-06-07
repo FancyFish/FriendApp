@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
+using FriendApp.View;
 
 namespace FriendApp
 {
@@ -13,8 +13,8 @@ namespace FriendApp
 		{
 			InitializeComponent();
 
-			MainPage = new FriendApp.MainPage();
-		}
+            MainPage = new NavigationPage(new MainPage());
+        }
 
 		protected override void OnStart ()
 		{

@@ -3,15 +3,81 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FriendApp"
              x:Class="FriendApp.View.MainPage">
-
-	<StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
         <ListView Header="Contactos"
                   Footer="Juliet"
                   SeparatorColor="Green"
                   HasUnevenRows="True"
                   RowHeight="15">
-            
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="FillAndExpand"
+                                     Padding="10">
+                            <Label BackgroundColor="Black"
+                                   TextColor="White"
+                                   VerticalOptions="Center"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center"
+                                     Padding="10"
+                                     BackgroundColor="DarkGreen">
+                            <Label Text="Amigos"
+                                   BackgroundColor="LimeGreen"
+                                   TextColor="White"
+                                   VerticalOptions="Center"></Label>
+                            <Label Text="Otros amigos"
+                                   BackgroundColor="PaleGreen"
+                                   TextColor="White"
+                                   VerticalOptions="Center"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Nombre"></Label>
+                            <Label Text="Teléfono"></Label>
+                            <Image Source="phone_locked.png"></Image>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.FooterTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="Center"
+                                     Padding="10">
+                            <Label Text="Mensaje 1"
+                                   BackgroundColor="MediumVioletRed"
+                                   TextColor="White"
+                                   VerticalOptions="Center"></Label>
+                            <Label Text="Mensaje 2"
+                                   BackgroundColor="MediumOrchid"
+                                   TextColor="White"
+                                   VerticalOptions="Center"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.FooterTemplate>
         </ListView>
-        </StackLayout>
-
+    </StackLayout>
 </ContentPage>
+
