@@ -6,6 +6,6 @@ namespace FriendApp.Services
 {
     public interface IFileHelper
     {
-        string GetLocalFilePath(string FileName);
+        string GetLocalFilePath(string fileName);
     }
 }
