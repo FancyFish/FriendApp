@@ -1,23 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:FriendApp"
+             xmlns:local="clr-namespace:FriendApp.Behaviors"
              x:Class="FriendApp.View.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ItempedAttached x:Key="CommBeha"></local:ItempedAttached>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+"></ToolbarItem>
+        <ToolbarItem Text="+"
+                     Command="{Binding AddFriendCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <StackLayout>
-        <ListView Header="Contactos"
+        <SearchBar Text="{Binding Filter}"
+                   SearchCommand="{Binding SearchCommand}"
+                   Placeholder="Ingrese nombre">
+        </SearchBar>
+        <ListView ItemsSource="{Binding Friends}"
+                  Header="Contactos"
                   Footer="Juliet"
                   SeparatorColor="Green"
                   HasUnevenRows="True"
-                  RowHeight="15">
+                  RowHeight="15"
+                  IsGroupingEnabled="True"
+                  GroupShortNameBinding="{Binding Key}"
+                  local:ItempedAttached.Command="{Binding ItemTappedCommand}"
+                  SelectedItem="{Binding CurrenteFriend}">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout VerticalOptions="FillAndExpand"
                                      Padding="10">
-                            <Label BackgroundColor="Black"
+                            <Label Text="{Binding Key}"
+                                   BackgroundColor="Black"
                                    TextColor="White"
                                    VerticalOptions="Center"></Label>
                         </StackLayout>
@@ -52,9 +68,12 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Label Text="Nombre"></Label>
-                            <Label Text="Teléfono"></Label>
-                            <Image Source="phone_locked.png"></Image>
+                            <Label Text="{Binding Nombre}"></Label>
+                            <Label Text="{Binding Teléfono}"
+                                   Grid.Column="1"></Label>
+                            <Image Grid.Column="2"
+                                   HorizontalOptions="End"
+                                   Source="phone_locked.png"></Image>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

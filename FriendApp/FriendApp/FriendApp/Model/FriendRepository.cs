@@ -31,8 +31,8 @@ namespace FriendApp.Model
             { 
                 sorted =
                 from f in Friends
-                orderby f.FirstName
-                group f by f.FirstName[0].ToString()
+                orderby f.Nombre
+                group f by f.Nombre[0].ToString()
                 into theGroup
                 select
                 new Grouping<string, Friend>

@@ -1,5 +1,6 @@
 ﻿namespace FriendApp.ViewModel
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
@@ -22,5 +23,10 @@
             backingField = value;
             OnPropertyChanged(propertyName);
         }
+
+        internal void Appearing()
+        {
+            throw new NotImplementedException();
         }
+    }
 }

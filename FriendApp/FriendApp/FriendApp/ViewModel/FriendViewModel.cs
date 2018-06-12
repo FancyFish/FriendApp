@@ -22,7 +22,7 @@ namespace FriendApp.ViewModel
         }
         public FriendViewModel(INavigation navigation, Friend friend)
         {
-            FriendModel = friend();
+            FriendModel = friend;
             SaveCommand = new Command(async () => await SaveFriend());
             Navigation = navigation;
         }
