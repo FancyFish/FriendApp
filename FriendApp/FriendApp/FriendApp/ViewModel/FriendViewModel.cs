@@ -26,10 +26,17 @@ namespace FriendApp.ViewModel
             FriendModel = friend;
             SaveCommand = new Command(async () => await SaveFriend());
             Navigation = navigation;
+            IsEnabled = true;
+            DeleteCommand = new Command(async () => await DeleteFriend());
         }
         public async Task SaveFriend()
         {
             await App.DataBase.SaveFriendAsync(FriendModel);
+            await Navigation.PopToRootAsync();
+        }
+        public async Task DeleteFriend()
+        {
+            await App.DataBase.DeleteFriendAsync(FriendModel);
             await Navigation.PopToRootAsync();
         }
 
