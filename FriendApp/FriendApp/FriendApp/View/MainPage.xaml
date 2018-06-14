@@ -26,7 +26,7 @@
                   IsGroupingEnabled="True"
                   GroupShortNameBinding="{Binding Key}"
                   local:ItempedAttached.Command="{Binding ItemTappedCommand}"
-                  SelectedItem="{Binding CurrenteFriend}">
+                  SelectedItem="{Binding CurrentFriend}">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -40,7 +40,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
-            <ListView.HeaderTemplate>
+            <!--<ListView.HeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
@@ -58,7 +58,7 @@
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
-            </ListView.HeaderTemplate>
+            </ListView.HeaderTemplate>-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -78,7 +78,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            <ListView.FooterTemplate>
+            <!--<ListView.FooterTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal"
@@ -95,7 +95,7 @@
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
-            </ListView.FooterTemplate>
+            </ListView.FooterTemplate>-->
         </ListView>
     </StackLayout>
 </ContentPage>

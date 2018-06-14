@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace FriendApp.Model
 {
@@ -30,9 +31,8 @@ namespace FriendApp.Model
             if(Friends != null)
             { 
                 sorted =
-                from f in Friends
-                orderby f.Nombre
-                group f by f.Nombre[0].ToString()
+                from f in Friends  orderby f.Nombre              
+                group f by f.Nombre==null ? "<null>" : f.Nombre
                 into theGroup
                 select
                 new Grouping<string, Friend>

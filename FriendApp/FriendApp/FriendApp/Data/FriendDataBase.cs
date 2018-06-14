@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using FriendApp.ViewModel;
 using System.Threading.Tasks;
+using FriendApp.Model;
 
 namespace FriendApp.Data
 {

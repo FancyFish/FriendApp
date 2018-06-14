@@ -24,9 +24,6 @@
             OnPropertyChanged(propertyName);
         }
 
-        internal void Appearing()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
