@@ -27,7 +27,7 @@
                         BackgroundColor="PeachPuff"
                         TextColor="White"
                         HorizontalOptions="FillAndExpand"
-                        Command="{Bindind DeleteCommand}"
+                        Command="{Binding DeleteCommand}"
                         IsEnabled="{Binding IsEnabled}"/>
             </StackLayout>
         </StackLayout>

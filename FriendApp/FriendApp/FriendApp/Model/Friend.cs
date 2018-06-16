@@ -1,9 +1,10 @@
-﻿using SQLite;
+﻿using FriendApp.ViewModel;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FriendApp.ViewModel
+namespace FriendApp.Model
 {
     public class Friend : NotificableFriend
     {

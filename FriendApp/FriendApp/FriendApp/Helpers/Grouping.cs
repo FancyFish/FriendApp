@@ -11,7 +11,7 @@ namespace FriendApp.Helpers
 
         public Grouping(K key, IEnumerable<T> items)
         {
-            this.Key = key;
+            Key = key;
             foreach(var item in items)
             {
                 Items.Add(item);

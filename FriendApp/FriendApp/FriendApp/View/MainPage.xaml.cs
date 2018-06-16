@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FriendApp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,9 @@ namespace FriendApp.View
 			InitializeComponent();
             
 		}
-	}
+        protected override void OnAppearing()
+        {
+            this.BindingContext = new MainPageViewModel(Navigation);
+        }
+    }
 }
